@@ -26,6 +26,7 @@ $di = new FactoryDefault();
 $di->setShared('url', function () use ($config) {
     $url = new UrlResolver();
     $url->setBaseUri($config->application->baseUri);
+    //$url->setStaticBaseUri('../');
 
     return $url;
 });

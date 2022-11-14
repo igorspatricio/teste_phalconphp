@@ -19,6 +19,6 @@ return new \Phalcon\Config(array(
         'pluginsDir'     => APP_PATH . '/app/plugins/',
         'libraryDir'     => APP_PATH . '/app/library/',
         'cacheDir'       => APP_PATH . '/app/cache/',
-        'baseUri'        => '/teste01/',
+        'baseUri'        => '/',// /teste01/ para -> / porque não estava carregando os arquivos da public corretamente.. talvez devido a eu estar usarndo o servidor inbutido do php
     )
 ));
