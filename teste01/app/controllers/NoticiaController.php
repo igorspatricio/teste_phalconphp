@@ -21,6 +21,15 @@ class NoticiaController extends ControllerBase
         
     }
 
+    public function listaTagAction($tag)
+    {
+        
+        $this->view->pick("noticia/listar");
+        $this->view->noticias = Noticia::find();
+        
+    }
+
+
     public function cadastrarAction()
     {
 

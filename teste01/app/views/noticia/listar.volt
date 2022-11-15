@@ -1,9 +1,10 @@
 {% extends 'layouts/index.volt' %}
 
+
     {%  block extrafooter %}
         <link href="{{ static_url("css/datatables.min.css") }}" rel="stylesheet">
     {% endblock %}
-
+    
     {% block content %}
     <div>{{ flashSession.output() }}</div>
             <div class="row">
@@ -15,11 +16,13 @@
                                 <!-- <a href="#" class="pull-right">View all</a> -->
                                 <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
                                 &nbsp;Notícias
-                                <form class="navbar-form navbar-right" id="search_ticket" role="search">
+                                <form class="navbar-form navbar-right" id="search_ticket" role="search" method="GET" >
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                                            <input id="dataTableSearch" type="text" class="form-control" placeholder="Search">
+                                        
+                                        <span class="input-group-addon" id="target" onclick="sendTag()"><i class="glyphicon glyphicon-search"></i></span>
+                                        <input id="dataTableSearch" type="text" class="form-control" placeholder="Search">
+                                          
                                         </div>
                                     </div>
                                 </form>
@@ -62,6 +65,7 @@
             </div><!-- row -->
 
     {% endblock %}
+  
 
     {%  block extrafooter %}
         
@@ -76,3 +80,11 @@
 
 
     {% endblock %}
+
+ {%  block extrafooter %}
+    <script>
+        function sendTag(){
+            window.location.href ="/noticias/" + document.getElementById('dataTableSearch').value
+        }
+    </script>
+{% endblock %}

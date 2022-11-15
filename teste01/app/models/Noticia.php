@@ -40,4 +40,6 @@ class Noticia extends Model
         $date = new DateTime();
         return $date->format('Y-m-d H:i:s');
     }
+
+
 }
