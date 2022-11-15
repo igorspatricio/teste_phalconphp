@@ -15,6 +15,8 @@ use Phalcon\Flash\Direct as Flash;
 use Phalcon\Http\Response\Cookies;
 use Phalcon\Crypt;
 
+
+
 /**
  * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
  */
@@ -128,5 +130,16 @@ $di->set('crypt', function () {
 
     return $crypt;
 });
+
+// Set up the flash service
+// $di->set('flash', function () {
+//     return new Flash([
+//         'error'   => 'alert alert-danger',
+//         'success' => 'alert alert-success',
+//         'notice'  => 'alert alert-info',
+//         'warning' => 'alert alert-warning'
+//     ]);
+// });
+
 
 //$di->set('contasEmail', require realpath('../app/config/email.php'));

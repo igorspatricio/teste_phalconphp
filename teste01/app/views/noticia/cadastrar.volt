@@ -3,6 +3,7 @@
     {% block content %}
 
         <div id="cadastro_ticket" class="row">
+        <div>{{ flashSession.output() }}</div>
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">

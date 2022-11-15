@@ -3,6 +3,7 @@
     {% block content %}
 
         <div id="cadastro_ticket" class="row">
+        <div>{{ flashSession.output() }}</div>
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -17,20 +18,20 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="form-group col-sm-12">
-                                                <p><strong>Data de Criação:</strong> 22/07/2017 11:18:22</p>
-                                                <p><strong>Data da Última Atualização:</strong> 22/07/2017 11:18:22</p>
+                                                <p><strong>Data de Criação:</strong> {{ noticia.data_cadastro }}</p>
+                                                <p><strong>Data da Última Atualização:</strong> {{ noticia.data_ultima_atualizacao }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-12">
                                                 <label for ="Titulo">Título <span class="error">(*)<span></label>
-                                                <input type="text" value="Texto 1" width='100%' class= "form-control">
+                                                <input type="text" name = "titulo" value = {{ noticia.titulo }} width='100%' class= "form-control">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-12">
                                                 <label for ="Texto">Texto</label>
-                                                <textarea class= "form-control">Texto 1</textarea>
+                                                <textarea class= "form-control" name="texto">{{ noticia.texto }}</textarea>
                                             </div>
                                         </div>
                                     </div>{#/.panel-body#}
@@ -43,6 +44,7 @@
                                 </div>
                             </div>{#/.conteudo#}
                         </div>{#/.panel-body#}
+                        {{request}}
                     {{ end_form() }}
                 </div>{#/.panel#}
             </div>{#/.col-md-12#}
